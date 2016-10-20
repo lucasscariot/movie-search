@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="css/bootstrap.css" media="all">
 		<link rel="stylesheet" href="css/style.css" media="all">
 </head>
-<body>
+<body ng-app="searchApp" ng-controller="searchCompany">
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,9 +31,9 @@
 	      </ul>
 	      <form class="navbar-form navbar-left">
 	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
+	          <input type="text" ng-model="search" class="form-control" placeholder="Search">
 	        </div>
-	        <button type="submit" class="btn btn-default">Submit</button>
+	        <button type="submit" ng-click="searchCompany()" class="btn btn-default">Submit</button>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
 	        <li><a href="#">Link</a></li>
@@ -52,13 +52,12 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-	<div class="container" ng-app="test" ng-controller="Hello">
+	<div class="container">
 		<h1>Welcome !</h1>
 		<div class="page" ng-repeat="page in movies">
 			<div class="movie col-xs-6 col-sm-4 col-md-3" ng-repeat="movie in page">
-				<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/{{movie.poster_path}}" alt="" />
-				<h4>{{movie.title}}</h4>
-				<p>{{movie.overview}}</p>
+				<h4>{{movie.name}}</h4>
+				<a class="btn btn-default" href="{{movie.id}}">See movie</a>
 			</div>
 		</div>
 	</div>

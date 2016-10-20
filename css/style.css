@@ -15,11 +15,18 @@ html, body {
 
 .movie {
   color: black;
-  height: 500px;
 }
 
 .movie img {
   width: 100%;
+  height: auto;
+}
+
+.movie h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .movie p {
